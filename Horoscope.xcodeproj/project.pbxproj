@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0122F8A828FD852C00C894E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8A728FD852C00C894E2 /* AppDelegate.swift */; };
+		0122F8AA28FD852C00C894E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8A928FD852C00C894E2 /* SceneDelegate.swift */; };
+		0122F8AC28FD852C00C894E2 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8AB28FD852C00C894E2 /* PredictionsViewController.swift */; };
+		0122F8B128FD852E00C894E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0122F8B028FD852E00C894E2 /* Assets.xcassets */; };
+		0122F8B428FD852E00C894E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0122F8B228FD852E00C894E2 /* LaunchScreen.storyboard */; };
+		0122F8BC28FDE2AF00C894E2 /* HoroscopeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8BB28FDE2AE00C894E2 /* HoroscopeItemCell.swift */; };
+		0122F8BE28FEE01600C894E2 /* HoroscopeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8BD28FEE01500C894E2 /* HoroscopeEndpoint.swift */; };
+		0122F8C528FF4A7500C894E2 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8C428FF4A7500C894E2 /* HoroscopeViewController.swift */; };
+		0122F8C72901A33500C894E2 /* FortuneCookieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8C62901A33500C894E2 /* FortuneCookieViewController.swift */; };
+		0122F8C92903340B00C894E2 /* HoroscopeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8C82903340A00C894E2 /* HoroscopeData.swift */; };
+		0122F8CD29046D3100C894E2 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8CC29046D3100C894E2 /* Date+Extension.swift */; };
+		0122F8CF2907456700C894E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8CE2907456600C894E2 /* DetailViewController.swift */; };
+		0122F8D1290867DF00C894E2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8D0290867DF00C894E2 /* APIService.swift */; };
+		0122F8D4290BDB9E00C894E2 /* WichAnimalAreYouReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8D3290BDB9D00C894E2 /* WichAnimalAreYouReadingViewController.swift */; };
+		0122F8D7290C4C6700C894E2 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122F8D6290C4C6700C894E2 /* UIImageView+Extension.swift */; };
+		01CE279429101616005C698E /* HoroscopeRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE279329101616005C698E /* HoroscopeRepositoryProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0122F8A428FD852B00C894E2 /* Horoscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horoscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0122F8A728FD852C00C894E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0122F8A928FD852C00C894E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0122F8AB28FD852C00C894E2 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
+		0122F8B028FD852E00C894E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0122F8B328FD852E00C894E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0122F8B528FD852E00C894E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0122F8BB28FDE2AE00C894E2 /* HoroscopeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeItemCell.swift; sourceTree = "<group>"; };
+		0122F8BD28FEE01500C894E2 /* HoroscopeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeEndpoint.swift; sourceTree = "<group>"; };
+		0122F8C428FF4A7500C894E2 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewController.swift; sourceTree = "<group>"; };
+		0122F8C62901A33500C894E2 /* FortuneCookieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCookieViewController.swift; sourceTree = "<group>"; };
+		0122F8C82903340A00C894E2 /* HoroscopeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeData.swift; sourceTree = "<group>"; };
+		0122F8CC29046D3100C894E2 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		0122F8CE2907456600C894E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0122F8D0290867DF00C894E2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		0122F8D3290BDB9D00C894E2 /* WichAnimalAreYouReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WichAnimalAreYouReadingViewController.swift; sourceTree = "<group>"; };
+		0122F8D6290C4C6700C894E2 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		01CE279329101616005C698E /* HoroscopeRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeRepositoryProtocol.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0122F8A128FD852B00C894E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0122F89B28FD852B00C894E2 = {
+			isa = PBXGroup;
+			children = (
+				0122F8A628FD852B00C894E2 /* Horoscope */,
+				0122F8A528FD852B00C894E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0122F8A528FD852B00C894E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0122F8A428FD852B00C894E2 /* Horoscope.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0122F8A628FD852B00C894E2 /* Horoscope */ = {
+			isa = PBXGroup;
+			children = (
+				0122F8A728FD852C00C894E2 /* AppDelegate.swift */,
+				0122F8A928FD852C00C894E2 /* SceneDelegate.swift */,
+				0122F8D5290C4C4100C894E2 /* Extensions */,
+				0122F8D2290B367000C894E2 /* Services */,
+				0122F8C128FF33C800C894E2 /* ViewControllers */,
+				0122F8C328FF33EE00C894E2 /* Models */,
+				0122F8B028FD852E00C894E2 /* Assets.xcassets */,
+				0122F8B228FD852E00C894E2 /* LaunchScreen.storyboard */,
+				0122F8B528FD852E00C894E2 /* Info.plist */,
+			);
+			path = Horoscope;
+			sourceTree = "<group>";
+		};
+		0122F8C128FF33C800C894E2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0122F8AB28FD852C00C894E2 /* PredictionsViewController.swift */,
+				0122F8C428FF4A7500C894E2 /* HoroscopeViewController.swift */,
+				0122F8CE2907456600C894E2 /* DetailViewController.swift */,
+				0122F8C62901A33500C894E2 /* FortuneCookieViewController.swift */,
+				0122F8D3290BDB9D00C894E2 /* WichAnimalAreYouReadingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0122F8C328FF33EE00C894E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0122F8BB28FDE2AE00C894E2 /* HoroscopeItemCell.swift */,
+				0122F8BD28FEE01500C894E2 /* HoroscopeEndpoint.swift */,
+				0122F8C82903340A00C894E2 /* HoroscopeData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0122F8D2290B367000C894E2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0122F8D0290867DF00C894E2 /* APIService.swift */,
+				01CE279329101616005C698E /* HoroscopeRepositoryProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0122F8D5290C4C4100C894E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0122F8CC29046D3100C894E2 /* Date+Extension.swift */,
+				0122F8D6290C4C6700C894E2 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0122F8A328FD852B00C894E2 /* Horoscope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0122F8B828FD852E00C894E2 /* Build configuration list for PBXNativeTarget "Horoscope" */;
+			buildPhases = (
+				0122F8A028FD852B00C894E2 /* Sources */,
+				0122F8A128FD852B00C894E2 /* Frameworks */,
+				0122F8A228FD852B00C894E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Horoscope;
+			productName = Horoscope;
+			productReference = 0122F8A428FD852B00C894E2 /* Horoscope.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0122F89C28FD852B00C894E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					0122F8A328FD852B00C894E2 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 0122F89F28FD852B00C894E2 /* Build configuration list for PBXProject "Horoscope" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0122F89B28FD852B00C894E2;
+			productRefGroup = 0122F8A528FD852B00C894E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0122F8A328FD852B00C894E2 /* Horoscope */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0122F8A228FD852B00C894E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0122F8B428FD852E00C894E2 /* LaunchScreen.storyboard in Resources */,
+				0122F8B128FD852E00C894E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0122F8A028FD852B00C894E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0122F8AC28FD852C00C894E2 /* PredictionsViewController.swift in Sources */,
+				0122F8D7290C4C6700C894E2 /* UIImageView+Extension.swift in Sources */,
+				0122F8BC28FDE2AF00C894E2 /* HoroscopeItemCell.swift in Sources */,
+				0122F8C92903340B00C894E2 /* HoroscopeData.swift in Sources */,
+				01CE279429101616005C698E /* HoroscopeRepositoryProtocol.swift in Sources */,
+				0122F8A828FD852C00C894E2 /* AppDelegate.swift in Sources */,
+				0122F8D1290867DF00C894E2 /* APIService.swift in Sources */,
+				0122F8CD29046D3100C894E2 /* Date+Extension.swift in Sources */,
+				0122F8C72901A33500C894E2 /* FortuneCookieViewController.swift in Sources */,
+				0122F8C528FF4A7500C894E2 /* HoroscopeViewController.swift in Sources */,
+				0122F8CF2907456700C894E2 /* DetailViewController.swift in Sources */,
+				0122F8BE28FEE01600C894E2 /* HoroscopeEndpoint.swift in Sources */,
+				0122F8AA28FD852C00C894E2 /* SceneDelegate.swift in Sources */,
+				0122F8D4290BDB9E00C894E2 /* WichAnimalAreYouReadingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0122F8B228FD852E00C894E2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0122F8B328FD852E00C894E2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0122F8B628FD852E00C894E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0122F8B728FD852E00C894E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0122F8B928FD852E00C894E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99D42X5Q4Q;
+				INFOPLIST_FILE = Horoscope/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.empty.project.1.test.Horoscope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0122F8BA28FD852E00C894E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99D42X5Q4Q;
+				INFOPLIST_FILE = Horoscope/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.empty.project.1.test.Horoscope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0122F89F28FD852B00C894E2 /* Build configuration list for PBXProject "Horoscope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0122F8B628FD852E00C894E2 /* Debug */,
+				0122F8B728FD852E00C894E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0122F8B828FD852E00C894E2 /* Build configuration list for PBXNativeTarget "Horoscope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0122F8B928FD852E00C894E2 /* Debug */,
+				0122F8BA28FD852E00C894E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0122F89C28FD852B00C894E2 /* Project object */;
+}
