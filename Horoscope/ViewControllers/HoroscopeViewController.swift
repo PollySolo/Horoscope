@@ -439,6 +439,7 @@ private extension HoroscopeViewController {
 
 		nameLabels.forEach {
 			$0.textColor = .purple
+            $0.numberOfLines = 1
 			$0.font = UIFont.boldSystemFont(ofSize: 20)
 			$0.textAlignment = .left
 		}
@@ -464,7 +465,7 @@ private extension HoroscopeViewController {
 					constant: Constants.leadingOffset
 				),
 				personalNameLabel.widthAnchor.constraint(
-					equalTo: contentView.widthAnchor,
+					greaterThanOrEqualTo: contentView.widthAnchor,
 					multiplier: 0.25
 				),
 				personalValueLabel.topAnchor.constraint(
@@ -496,7 +497,7 @@ private extension HoroscopeViewController {
 					constant: Constants.leadingOffset
 				),
 				professionNameLabel.widthAnchor.constraint(
-					equalTo: contentView.widthAnchor,
+					greaterThanOrEqualTo: contentView.widthAnchor,
 					multiplier: 0.25
 				),
 				professionValueLabel.topAnchor.constraint(
@@ -528,7 +529,7 @@ private extension HoroscopeViewController {
 					constant: Constants.leadingOffset
 				),
 				emotionsNameLabel.widthAnchor.constraint(
-					equalTo: contentView.widthAnchor,
+					greaterThanOrEqualTo: contentView.widthAnchor,
 					multiplier: 0.25
 				),
 				emotionsValueLabel.topAnchor.constraint(
@@ -560,7 +561,7 @@ private extension HoroscopeViewController {
 					constant: Constants.leadingOffset
 				),
 				travelNameLabel.widthAnchor.constraint(
-					equalTo: contentView.widthAnchor,
+					greaterThanOrEqualTo: contentView.widthAnchor,
 					multiplier: 0.25
 				),
 				travelValueLabel.topAnchor.constraint(
@@ -592,7 +593,7 @@ private extension HoroscopeViewController {
 					constant: Constants.leadingOffset
 				),
 				luckNameLabel.widthAnchor.constraint(
-					equalTo: contentView.widthAnchor,
+					greaterThanOrEqualTo: contentView.widthAnchor,
 					multiplier: 0.25
 				),
 				luckValueLabel.topAnchor.constraint(
