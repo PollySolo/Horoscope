@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class HoroscopeViewController: UIViewController {
 
@@ -30,8 +31,6 @@ final class HoroscopeViewController: UIViewController {
 			}
 		}
 	}
-
-	//private var buttonInAllert = UIButton()
 
 	private let segementedVariants = TimeInterval.allCases
 
@@ -157,27 +156,15 @@ private extension HoroscopeViewController {
 	}
 
 	func configureScrollView() {
-		scrollView.backgroundColor = UIColor(red: 1.0, green: 0.82, blue: 1.0, alpha: 0.8)//.withAlphaComponent(0.8)
+		scrollView.backgroundColor = UIColor(red: 1.0, green: 0.82, blue: 1.0, alpha: 0.8)
 		view.addSubview(scrollView)
 		scrollView.addSubview(contentView)
-
-		scrollView.translatesAutoresizingMaskIntoConstraints = false
-		contentView.translatesAutoresizingMaskIntoConstraints = false
-
-		scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-		scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-		scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-		scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
-		contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-		contentView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-		contentView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-		contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-		contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-
-		let heightConstraint = contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
-		heightConstraint.priority = UILayoutPriority(rawValue: 250)
-		heightConstraint.isActive = true
+		scrollView.snp.makeConstraints { $0.edges.equalToSuperview() }
+		contentView.snp.makeConstraints {
+			$0.top.bottom.width.equalToSuperview()
+			$0.left.right.equalTo(view)
+			$0.height.equalToSuperview().priority(250)
+		}
 	}
 
 	func configureRequestView() {
@@ -187,99 +174,38 @@ private extension HoroscopeViewController {
 		dataRequestViewContainer.addSubview(typeOfTimeIntervalLabel)
 		dataRequestViewContainer.addSubview(typeOfTimeIntervalSegmented)
 		dataRequestViewContainer.addSubview(okButton)
-
-		dataRequestViewContainer.translatesAutoresizingMaskIntoConstraints = false
-		userBirthdateLabel.translatesAutoresizingMaskIntoConstraints = false
-		userBirthdatePicker.translatesAutoresizingMaskIntoConstraints = false
-		typeOfTimeIntervalLabel.translatesAutoresizingMaskIntoConstraints = false
-		typeOfTimeIntervalSegmented.translatesAutoresizingMaskIntoConstraints = false
-		okButton.translatesAutoresizingMaskIntoConstraints = false
-
-		NSLayoutConstraint.activate(
-			[
-				dataRequestViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-				dataRequestViewContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-				dataRequestViewContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-				dataRequestViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-
-				userBirthdateLabel.topAnchor.constraint(
-					equalTo: dataRequestViewContainer.safeAreaLayoutGuide.topAnchor,
-					constant: Constants.topOffset
-				),
-				userBirthdateLabel.leadingAnchor.constraint(
-					equalTo: dataRequestViewContainer.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				userBirthdateLabel.trailingAnchor.constraint(
-					equalTo: dataRequestViewContainer.trailingAnchor,
-					constant: -Constants.leadingOffset
-				),
-				userBirthdateLabel.heightAnchor.constraint(
-					equalToConstant: 40
-				),
-
-				userBirthdatePicker.topAnchor.constraint(
-					equalTo: userBirthdateLabel.bottomAnchor,
-					constant: 12
-				),
-				userBirthdatePicker.leadingAnchor.constraint(
-					equalTo: dataRequestViewContainer.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				userBirthdatePicker.trailingAnchor.constraint(
-					equalTo: dataRequestViewContainer.trailingAnchor,
-					constant: -Constants.leadingOffset
-				),
-				userBirthdatePicker.heightAnchor.constraint(
-					equalToConstant: 200
-				),
-
-				typeOfTimeIntervalLabel.topAnchor.constraint(
-					equalTo: userBirthdatePicker.bottomAnchor,
-					constant: Constants.topOffset
-				),
-				typeOfTimeIntervalLabel.leadingAnchor.constraint(
-					equalTo: dataRequestViewContainer.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				typeOfTimeIntervalLabel.trailingAnchor.constraint(
-					equalTo: dataRequestViewContainer.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-
-				typeOfTimeIntervalSegmented.topAnchor.constraint(
-					equalTo: typeOfTimeIntervalLabel.bottomAnchor,
-					constant: Constants.topOffset
-				),
-				typeOfTimeIntervalSegmented.leadingAnchor.constraint(
-					equalTo: dataRequestViewContainer.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				typeOfTimeIntervalSegmented.trailingAnchor.constraint(
-					equalTo: dataRequestViewContainer.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-				typeOfTimeIntervalSegmented.heightAnchor.constraint(
-					equalToConstant: 40
-				),
-
-				okButton.bottomAnchor.constraint(
-					equalTo: dataRequestViewContainer.safeAreaLayoutGuide.bottomAnchor,
-					constant: -Constants.bottomOffset
-				),
-				okButton.leadingAnchor.constraint(
-					equalTo: dataRequestViewContainer.safeAreaLayoutGuide.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				okButton.trailingAnchor.constraint(
-					equalTo: dataRequestViewContainer.safeAreaLayoutGuide.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-				okButton.heightAnchor.constraint(
-					equalToConstant: 80
-				)
-			]
+		
+		let edges = UIEdgeInsets(
+			top: Constants.topOffset,
+			left: Constants.leadingOffset,
+			bottom: Constants.bottomOffset,
+			right: Constants.leadingOffset
 		)
+		
+		dataRequestViewContainer.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
+		
+		userBirthdateLabel.snp.makeConstraints {
+			$0.top.leading.trailing.equalToSuperview().inset(edges)
+			$0.height.equalTo(40)
+		}
+		userBirthdatePicker.snp.makeConstraints {
+			$0.top.equalTo(userBirthdateLabel.snp.bottom).offset(12)
+			$0.leading.trailing.equalTo(edges)
+		}
+		typeOfTimeIntervalLabel.snp.makeConstraints {
+			$0.top.equalTo(userBirthdatePicker.snp.bottom).offset(edges.top)
+			$0.leading.trailing.equalTo(edges)
+		}
+		typeOfTimeIntervalSegmented.snp.makeConstraints {
+			$0.top.equalTo(typeOfTimeIntervalLabel.snp.bottom).offset(edges.top)
+			$0.leading.trailing.equalTo(edges)
+			$0.height.equalTo(40)
+		}
+		okButton.snp.makeConstraints {
+			$0.bottom.equalTo(dataRequestViewContainer.safeAreaLayoutGuide).inset(edges)
+			$0.leading.trailing.equalTo(edges)
+			$0.height.equalTo(80)
+		}
 
 		userBirthdateLabel.text = "Please, choose your birthdate:"
 		userBirthdateLabel.font = UIFont.boldSystemFont(ofSize: 20)
@@ -439,7 +365,6 @@ private extension HoroscopeViewController {
 
 		nameLabels.forEach {
 			$0.textColor = .purple
-            $0.numberOfLines = 1
 			$0.font = UIFont.boldSystemFont(ofSize: 20)
 			$0.textAlignment = .left
 		}
@@ -448,173 +373,86 @@ private extension HoroscopeViewController {
 			$0.textColor = .purple
 			$0.textAlignment = .right
 		}
+		
 		personalNameLabel.text = "Personal:"
 		professionNameLabel.text = "Profession:"
 		emotionsNameLabel.text = "Emotions:"
 		travelNameLabel.text = "Travel:"
 		luckNameLabel.text = "Luck:"
-
-		NSLayoutConstraint.activate(
-			[
-				personalNameLabel.topAnchor.constraint(
-					equalTo: contentView.topAnchor,
-					constant: Constants.topOffset
-				),
-				personalNameLabel.leadingAnchor.constraint(
-					equalTo: contentView.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				personalNameLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.25
-				),
-				personalValueLabel.topAnchor.constraint(
-					equalTo: personalNameLabel.topAnchor
-				),
-				personalValueLabel.trailingAnchor.constraint(
-					equalTo: contentView.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-				personalValueLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.1
-				),
-				personalValueLabel.leadingAnchor.constraint(
-					equalTo: personalNameLabel.trailingAnchor,
-					constant: Constants.minimumLabelOffset
-				)
-			]
+		
+		let edges = UIEdgeInsets(
+			top: Constants.topOffset,
+			left: Constants.leadingOffset,
+			bottom: 0,
+			right: Constants.leadingOffset
 		)
-
-		NSLayoutConstraint.activate(
-			[
-				professionNameLabel.topAnchor.constraint(
-					equalTo: personalValueLabel.bottomAnchor,
-					constant: Constants.topOffset
-				),
-				professionNameLabel.leadingAnchor.constraint(
-					equalTo: contentView.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				professionNameLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.25
-				),
-				professionValueLabel.topAnchor.constraint(
-					equalTo: professionNameLabel.topAnchor
-				),
-				professionValueLabel.trailingAnchor.constraint(
-					equalTo: contentView.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-				professionValueLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.1
-				),
-				professionValueLabel.leadingAnchor.constraint(
-					equalTo: professionNameLabel.trailingAnchor,
-					constant: Constants.minimumLabelOffset
-				)
-			]
-		)
-
-		NSLayoutConstraint.activate(
-			[
-				emotionsNameLabel.topAnchor.constraint(
-					equalTo: professionValueLabel.bottomAnchor,
-					constant: Constants.topOffset
-				),
-				emotionsNameLabel.leadingAnchor.constraint(
-					equalTo: contentView.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				emotionsNameLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.25
-				),
-				emotionsValueLabel.topAnchor.constraint(
-					equalTo: emotionsNameLabel.topAnchor
-				),
-				emotionsValueLabel.trailingAnchor.constraint(
-					equalTo: contentView.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-				emotionsValueLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.1
-				),
-				emotionsValueLabel.leadingAnchor.constraint(
-					equalTo: emotionsNameLabel.trailingAnchor,
-					constant: Constants.minimumLabelOffset
-				)
-			]
-		)
-
-		NSLayoutConstraint.activate(
-			[
-				travelNameLabel.topAnchor.constraint(
-					equalTo: emotionsValueLabel.bottomAnchor,
-					constant: Constants.topOffset
-				),
-				travelNameLabel.leadingAnchor.constraint(
-					equalTo: contentView.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				travelNameLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.25
-				),
-				travelValueLabel.topAnchor.constraint(
-					equalTo: travelNameLabel.topAnchor
-				),
-				travelValueLabel.trailingAnchor.constraint(
-					equalTo: contentView.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-				travelValueLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.1
-				),
-				travelValueLabel.leadingAnchor.constraint(
-					equalTo: travelNameLabel.trailingAnchor,
-					constant: Constants.minimumLabelOffset
-				)
-			]
-		)
-
-		NSLayoutConstraint.activate(
-			[
-				luckNameLabel.topAnchor.constraint(
-					equalTo: travelValueLabel.bottomAnchor,
-					constant: Constants.topOffset
-				),
-				luckNameLabel.leadingAnchor.constraint(
-					equalTo: contentView.leadingAnchor,
-					constant: Constants.leadingOffset
-				),
-				luckNameLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.25
-				),
-				luckValueLabel.topAnchor.constraint(
-					equalTo: luckNameLabel.topAnchor
-				),
-				luckValueLabel.trailingAnchor.constraint(
-					equalTo: contentView.trailingAnchor,
-					constant: -Constants.trailingOffset
-				),
-				luckValueLabel.widthAnchor.constraint(
-					greaterThanOrEqualTo: contentView.widthAnchor,
-					multiplier: 0.1
-				),
-				luckValueLabel.leadingAnchor.constraint(
-					equalTo: luckNameLabel.trailingAnchor,
-					constant: Constants.minimumLabelOffset
-				),
-				luckValueLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20)
-			]
-		)
+		
+		personalNameLabel.snp.makeConstraints {
+			$0.top.leading.equalToSuperview().inset(edges)
+			$0.width.equalToSuperview().multipliedBy(0.25)
+		}
+		
+		personalValueLabel.snp.makeConstraints {
+			$0.top.equalTo(personalNameLabel)
+			$0.trailing.equalToSuperview().inset(edges)
+			$0.width.greaterThanOrEqualToSuperview().multipliedBy(0.1)
+			$0.leading.equalTo(personalNameLabel.snp.trailing).offset(Constants.minimumLabelOffset)
+		}
+		
+		professionNameLabel.snp.makeConstraints {
+			$0.top.equalTo(personalValueLabel.snp.bottom).offset(edges.top)
+			$0.leading.equalToSuperview().inset(edges)
+			$0.width.equalToSuperview().multipliedBy(0.25)
+		}
+		
+		professionValueLabel.snp.makeConstraints {
+			$0.top.equalTo(professionNameLabel)
+			$0.trailing.equalToSuperview().inset(edges)
+			$0.width.greaterThanOrEqualToSuperview().multipliedBy(0.1)
+			$0.leading.equalTo(professionNameLabel.snp.trailing).offset(Constants.minimumLabelOffset)
+		}
+		
+		emotionsNameLabel.snp.makeConstraints {
+			$0.top.equalTo(professionValueLabel.snp.bottom).offset(edges.top)
+			$0.leading.equalToSuperview().inset(edges)
+			$0.width.equalToSuperview().multipliedBy(0.25)
+		}
+		
+		emotionsValueLabel.snp.makeConstraints {
+			$0.top.equalTo(emotionsNameLabel)
+			$0.trailing.equalToSuperview().inset(edges)
+			$0.width.greaterThanOrEqualToSuperview().multipliedBy(0.1)
+			$0.leading.equalTo(emotionsNameLabel.snp.trailing).offset(Constants.minimumLabelOffset)
+		}
+		
+		travelNameLabel.snp.makeConstraints {
+			$0.top.equalTo(emotionsValueLabel.snp.bottom).offset(edges.top)
+			$0.leading.equalToSuperview().inset(edges)
+			$0.width.equalToSuperview().multipliedBy(0.25)
+		}
+		
+		travelValueLabel.snp.makeConstraints {
+			$0.top.equalTo(travelNameLabel)
+			$0.trailing.equalToSuperview().inset(edges)
+			$0.width.greaterThanOrEqualToSuperview().multipliedBy(0.1)
+			$0.leading.equalTo(travelNameLabel.snp.trailing).offset(Constants.minimumLabelOffset)
+		}
+		
+		luckNameLabel.snp.makeConstraints {
+			$0.top.equalTo(travelValueLabel.snp.bottom).offset(edges.top)
+			$0.leading.equalToSuperview().inset(edges)
+			$0.width.equalToSuperview().multipliedBy(0.25)
+		}
+		
+		luckValueLabel.snp.makeConstraints {
+			$0.top.equalTo(luckNameLabel)
+			$0.trailing.equalToSuperview().inset(edges)
+			$0.width.greaterThanOrEqualToSuperview().multipliedBy(0.1)
+			$0.leading.equalTo(luckNameLabel.snp.trailing).offset(Constants.minimumLabelOffset)
+			$0.bottom.equalToSuperview().inset(20)
+		}
 	}
+
 	private func showAlertButtonTapped() {
 
 		let dialogMessage = UIAlertController(title: "Attention", message: "Please try again", preferredStyle: .alert)
