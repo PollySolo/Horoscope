@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class FortuneCookieViewController: UIViewController {
 
@@ -29,21 +30,21 @@ class FortuneCookieViewController: UIViewController {
     }
 
 	func configureLabel() {
+		let edges = UIEdgeInsets(
+			top: Constants.topOffset,
+			left: Constants.leadingOffset,
+			bottom: Constants.bottomOffset,
+			right: Constants.leadingOffset
+		)
 		view.addSubview(messageLabel)
-		messageLabel.translatesAutoresizingMaskIntoConstraints = false
 		messageLabel.textAlignment = .center
 		messageLabel.numberOfLines = 0
 		messageLabel.textColor = .purple
 		messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
-		NSLayoutConstraint.activate([
-			messageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-			messageLabel.leadingAnchor.constraint(
-				equalTo: view.leadingAnchor,
-				constant: Constants.leadingOffset
-			),
-			messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-		])
-
+		messageLabel.snp.makeConstraints {
+			$0.centerY.equalToSuperview()
+			$0.leading.trailing.equalToSuperview().inset(edges)
+		}
 	}
 
 	init(endpoint: HoroscopeEndpoint, horoscopeRepository: HoroscopeRepositoryProtocol) {
