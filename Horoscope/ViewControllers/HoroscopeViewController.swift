@@ -365,6 +365,7 @@ private extension HoroscopeViewController {
 
 		nameLabels.forEach {
 			$0.textColor = .purple
+            $0.numberOfLines = 1
 			$0.font = UIFont.boldSystemFont(ofSize: 20)
 			$0.textAlignment = .left
 		}
